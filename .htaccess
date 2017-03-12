@@ -1,0 +1,7 @@
+RewriteEngine on
+#RewriteBase /
+RewriteCond $1 !^(index\.php|images|admin|robots\.txt)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond $1 !^(index\.php|images|admin|robots\.txt)
+RewriteRule .* index.php/$0 [PT,L]

@@ -41,6 +41,33 @@ class Adminmodel extends CI_Model {
 			$sql = "DELETE FROM `coachnumber` WHERE `coachnumber`.`id` = '$id'";
 			$this->db->query($sql);
 		}
+
+		public function getReserves()
+		{
+			$sql = "SELECT reserve.coachid, reserve.date, reserve.seat,coachnumber.type,coachnumber.fare, coachnumber.departuretime,coachnumber.arrivaltime,route.origin,route.destination, user.name FROM reserve JOIN coachnumber ON reserve.coachid=coachnumber.id JOIN route ON coachnumber.routeid=route.routeid JOIN user on reserve.userid=user.id ORDER BY reserve.id";
+			$result = $this->db->query($sql);
+			return $result->result_array();
+		}
+
+		public function addRoute($origin,$destination)
+		{
+			$sql = "INSERT into route (origin,destination) VALUES (?, ?)";
+			$this->db->query($sql, array($origin,$destination));
+		}
+
+		public function getCoachReport()
+		{
+			$sql = "SELECT coachid,COUNT(*) as count FROM reserve GROUP BY coachid ORDER BY count DESC";
+			$result = $this->db->query($sql);
+			return $result->result_array();
+		}
+
+		public function getreservetypereports()
+		{
+			$sql = "SELECT coachnumber.type,COUNT(*) as counts FROM reserve JOIN coachnumber ON reserve.coachid=coachnumber.id GROUP BY coachnumber.type ORDER BY counts DESC";
+			$result = $this->db->query($sql);
+			return $result->result_array();
+		}
 }
 
 /* End of file adminmodel.php */

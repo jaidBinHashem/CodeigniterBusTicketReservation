@@ -26,6 +26,14 @@ class Userhome extends CI_Controller {
 	{
 		if($this->input->post("search"))
 		{
+
+			if($this->form_validation->run('search') == false)
+			{
+				$data['message'] = validation_errors();
+				$this->load->view("view_userhome",$data);
+				return;
+			}
+
 			$from = $this->input->post('from');
 			$to = $this->input->post('to');
 			$date = $this->input->post('date');
@@ -39,7 +47,8 @@ class Userhome extends CI_Controller {
 		}
 		else
 		{
-			$this->load->view("view_userhome");
+			$data['message'] = '';
+			$this->load->view("view_userhome",$data);
 		}
 	}
 
@@ -81,6 +90,10 @@ class Userhome extends CI_Controller {
 			{
 				$data['reserve'] = $reserve;
 				$this->parser->parse("view_cancelreserve",$data);
+			}
+			else
+			{
+				redirect("http://localhost:8082/ci226Bus/userhome/myreserves", 'refresh');
 			}
 		}
 	}
@@ -164,6 +177,20 @@ class Userhome extends CI_Controller {
 		$this->load->model('searchmodel');
 		$result = $this->searchmodel->getDestination($keyword);
 		echo json_encode($result);
+	}
+
+	public function validateDate($date)
+	{
+		$pattern = '/^\d\d\d\d-\d\d-\d\d$/';
+		if(preg_match($pattern, $date))
+		{
+			return true;
+		}
+		else
+		{
+			$this->form_validation->set_message('date', 'Invalid date');
+			return false;
+		}
 	}
 
 }

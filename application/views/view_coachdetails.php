@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Admin Home</title>
+  <title>Coach Details</title>
   <script src="http://localhost:8082/ci226Bus/public/scripts/validation.js" type="text/javascript"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">

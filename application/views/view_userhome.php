@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Admin Home</title>
+  <title>User Home</title>
   <script type="text/javascript" src="http://localhost:8082/ci226Bus/public/scripts/jquery-3.1.1.js"></script>
   <script type="text/javascript" src="http://localhost:8082/ci226Bus/public/scripts/jquery-ui.js"></script>
   <link rel="stylesheet" type="text/css" href="http://localhost:8082/ci226Bus/public/css/jquery-ui.css">
@@ -58,6 +58,7 @@
           <input type="submit" value="Search" name="search" class="btn btn-primary">
         </div>
       </form><br>
+      <label><?php echo $message; ?></label>
       <a href="http://localhost:8082/ci226Bus/userhome/myreserves" class="btn btn-primary btn-block">My Reserves</a>
       <br>
       <a href="http://localhost:8082/ci226Bus/home/logout" class="btn btn-primary btn-block">Logout</a>

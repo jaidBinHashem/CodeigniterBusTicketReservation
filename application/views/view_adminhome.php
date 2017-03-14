@@ -36,6 +36,11 @@
   	<a href="http://localhost:8082/ci226Bus/adminhome/reservations" class="btn btn-primary">Reservations</a>
   </div>
   <br>
+  <h2>Reports</h2>
+  <a href="http://localhost:8082/ci226Bus/adminhome/coachreports" class="btn btn-primary">Coach Reports</a>
+  <a href="http://localhost:8082/ci226Bus/adminhome/reservetypereports" class="btn btn-primary">Reserved Types Report</a>
+  <br>
+  <br>
   <a href="http://localhost:8082/ci226Bus/home/logout" class="btn btn-primary btn-block">Logout</a>
 </div>
 

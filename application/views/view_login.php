@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title></title>
+		<title>Welcome</title>
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
         <style>
             @import url(http://fonts.googleapis.com/css?family=Roboto:400);
@@ -51,7 +51,7 @@
 	<body>
 		<!--Pulling Awesome Font -->
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-        <form method='post' class='form-validate' id="test">
+        <form method='post' class='form-validate' onsubmit="return validateRegistration()" id="test">
             <div class="container">
                 <div class="row">
                     <div class="col-md-offset-5 col-md-3">
@@ -71,6 +71,9 @@
 <br>
                             <div class="submit">
                                 <input type="submit" value="Login" name="buttonLogin" class="btn btn-primary center-block">
+                                <br>
+                                <a href="http://localhost:8082/ci226Bus/registration" class="btn btn-primary">Registration</a>
+                                
                             </div>
                         </div>
                     </div>

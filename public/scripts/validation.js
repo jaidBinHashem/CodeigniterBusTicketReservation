@@ -108,3 +108,126 @@ function validateTo(to)
 		return true;
 	}
 }
+
+
+function validateAddRoute()
+{
+	var origin = document.getElementById("origin").value;
+	var destination = document.getElementById("destination").value;
+
+	if(validateOrigin(origin) && validateDestionation(destination))
+	{
+		return true;
+	}
+	else
+	{
+		alert("Please Check The Inputs");
+		return false;		
+	}
+}
+
+function validateOrigin(origin)
+{
+	if(origin=="")
+	{
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+function validateDestionation(destination)
+{
+	if(destination=="")
+	{
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+
+
+function validateRegistration()
+{
+	var username = document.getElementById("username").value;
+	var password = document.getElementById("password").value;
+	var repassword = document.getElementById("repassword").value;
+	var fullname = document.getElementById("fullname").value;
+	var email = document.getElementById("email").value;
+	var mobile = document.getElementById("mobile").value;
+	
+	if(validateUsername(username) && validatePassword(password) && validateRePassword(repassword,password) && validateFullName(fullname) && validateEmail(email) && validateMobile(mobile))
+	{
+		return true;
+	}
+	else
+	{
+		alert("Please Check The Inputs");
+		return false;		
+	}
+}
+
+function validateUsername(username)
+{
+	if(username==" ")
+	{
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+function validatePassword(password)
+{
+	if(password==" ")
+	{
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+function validateRePassword(repassword,password)
+{
+	if(repassword != password)
+	{
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+function validateFullName(fullname)
+{
+	if(fullname==" ")
+	{
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+function validateEmail(email)
+{
+	var re = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+	return re.test(email);
+}
+
+function validateMobile(mobile)
+{
+	var re = new RegExp(/^(?:\+88|01)?(?:\d{11}|\d{13})$/);
+	return re.test(mobile);
+}

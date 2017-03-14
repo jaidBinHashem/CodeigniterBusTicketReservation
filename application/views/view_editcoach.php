@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Admin Home</title>
+  <title>Edit Coach</title>
   <script src="http://localhost:8082/ci226Bus/public/scripts/validation.js" type="text/javascript"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -61,6 +61,7 @@
         <input type="submit" value="Edit Coach" name="editcoach" class="btn btn-primary">
       </div>
     </form><br>
+    <label><?php echo $message; ?></label>
     <a href="http://localhost:8082/ci226Bus/adminhome/coachdetails/{id}" class="btn btn-primary btn-block">Cancel Edit</a>
     {/coach}
     <a href="http://localhost:8082/ci226Bus/home/logout" class="btn btn-primary btn-block">Logout</a>
